@@ -1,0 +1,7 @@
+{% include "../nav.html" %}
+<h1  class="mt-5">Editar Setor</h1>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Ok" />
+</form>
+{% include "../footer.html" %}

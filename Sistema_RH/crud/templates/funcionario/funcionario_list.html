@@ -1,0 +1,33 @@
+{% include "../nav.html" %}
+<h1 class="mt-5">Funcionarios</h1>
+
+<table border="1" class="table table-bordered">
+<thead>
+    <tr>
+    <th>Nome</th>
+    <th>Sexo</th>
+    <th>Data de nascimento</th>
+    <th>Setor</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for funcionario in object_list %}
+    <tr>
+    <td>{{ funcionario.nome }}</td>
+    <td>{{ funcionario.sexo }}</td>
+    <td>{{ funcionario.data_nascimento }}</td>
+    <td>{{ funcionario.setor }}</td>
+    <td><a href="{% url "funcionario_view" funcionario.id %}">Visualizar</a></td>
+    <td><a href="{% url "funcionario_edit" funcionario.id %}">Editar</a></td>
+    <td><a href="{% url "funcionario_delete" funcionario.id %}">Excluir</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "funcionario_new" %}">Novo</a>
+
+{% include "../footer.html" %}

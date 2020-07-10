@@ -1,0 +1,28 @@
+{% include "../nav.html" %}
+<h1 class="mt-5">Setores</h1>
+
+<table border="1" class="table table-bordered">
+<thead>
+    <tr>
+    <th>Nome</th>
+    <th>Pausa pro café</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for setor in object_list %}
+    <tr>
+    <td>{{ setor.nome }}</td>
+    <td>{{ setor.pausa_cafe }}</td>
+    <td><a href="{% url "setor_view" setor.id %}">Visualizar</a></td>
+    <td><a href="{% url "setor_edit" setor.id %}">Editar</a></td>
+    <td><a href="{% url "setor_delete" setor.id %}">Excluir</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "setor_new" %}">Novo</a>
+{% include "../footer.html" %}

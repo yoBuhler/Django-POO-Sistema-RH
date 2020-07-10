@@ -1,0 +1,7 @@
+{% include "../nav.html" %}
+<h1  class="mt-5">Excluir Setor</h1>
+<form method="post">{% csrf_token %}
+    Você realmente deseja excluir "{{ object }}" ?
+    <input type="submit" value="Excluir" />
+</form>
+{% include "../footer.html" %}
